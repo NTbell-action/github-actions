@@ -1,0 +1,38 @@
+name: workflow-dispatch
+on:
+  workflow_dispatch:
+  input:
+    name:
+      description: "set name" #name에 대한 설명
+      required: true #input 값이 필요여부
+      default: "github-actions" # 기본값
+      type: string # 데이터 타입
+    environment:
+      description: "set env"
+      required: true
+      default: "dev"
+      type: choice
+      options:
+        - dev
+        - qa
+        - prod
+
+# 수동으로 트리거
+# default branch에서만 동작
+# 사용자가 Actions에서 Run workflows에서 선택시 적용가능
+# input 값을 넣을 수 있음, types => string, number, boolean, choice(선택시 options)
+
+jobs:
+  workflow-dispatch-job:
+  runs-on: ubuntu-latest
+  steps:
+    - name: step1
+      run: echo hello world
+    - name: step2
+      run: |
+        echo hello world
+        echo github action
+    - name: echo inputs
+      run: |
+        echo "name: ${{input.name}}"
+        echo "environment: ${{input.environment }}"
