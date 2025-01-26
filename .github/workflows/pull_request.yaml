@@ -1,5 +1,13 @@
 name: pull-request-workflow
-on: pull_request
+# on: pull_request
+
+# pull_request만 작성시 "opened, synchronize, repoened" 디폴트 타입이 적용됨
+# 즉, 지정하지많은면 pr시 자동으로 트리거됨
+# active type을 지정해줘야함
+
+on:
+  pull_request:
+    type: [opended]
 
 jobs: #실행 시킬 job집합
   pull-request-job:
