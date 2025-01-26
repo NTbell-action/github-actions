@@ -1,7 +1,7 @@
 name: workflow-dispatch
 on:
   workflow_dispatch:
-  input:
+  inputs:
     name:
       description: "set name" #name에 대한 설명
       required: true #input 값이 필요여부
