@@ -1,5 +1,5 @@
 name: push-workflow
-on: push #이벤트선택해서 트리거 선택
+on: push #이벤트선택해서 트리거 선택, push는 active type없음
 
 jobs: #실행 시킬 job집합
   push-job:
