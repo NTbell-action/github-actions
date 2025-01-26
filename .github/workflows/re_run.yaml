@@ -1,4 +1,16 @@
-neme: re-run
+name: re-run
+
+# re-run
+# 과거의 실행된 워크플로우를 재실행
+# 성공, 실패 여부와 상관없이 재실행 가능
+# 트리거된 그 시점을 다시 실행
+
+#오해
+#1. 과거에 이미 실행된 워크프로우가 있음
+#2. 파일을 수정
+#3. 과거에 실행된 워크플로우를 리턴해도 수정한 내용이 반영되지 않음
+#4. 수정한 파일이 포한된 후에 워크플로우가 트리거되어야 반영
+
 on: push
 
 jobs:
@@ -7,5 +19,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+        #checkout은 Github 레파지토리의 코드를 GitHub Action 잡에서 받아올 수 있도록 하는 액션
       - name: cat readme
         run: cat README.md
