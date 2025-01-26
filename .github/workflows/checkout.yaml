@@ -1,0 +1,21 @@
+name: checkout
+# github 레포지터리를 가져와 작업을 수행
+# 테스트 및 빌드 작업 수행
+# 레포지터리 내용을 CICD워크플로우 사용
+
+on: workflow_dispatch
+
+jobs:
+  no-checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout file list
+        run: cat README.md
+
+  checkout:
+    runs-on: ubuntu-latest
+    steps:
+      - name: user checkout action
+        uses: actions/checkout@v4
+      - name: check file list
+        run: cat README.md
