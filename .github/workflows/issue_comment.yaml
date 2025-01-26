@@ -1,0 +1,20 @@
+name: issue-comment-workflow
+on: issue_comment
+
+#issue_comment 도 activity types -> "created, edited, deleted"
+#default branch에서만 트리거됨
+
+jobs:
+  pr-comment:
+    if: ${{ github.event.issue.pull_request }}
+    run-on: ubuntu-latest
+    steps:
+      - name: pr comment
+        run: echo ${{ github.event.issue.pull_request }}
+
+  issue-comment:
+    if: ${{ github.event.issue.pull_request }}
+    run-on: ubuntu-latest
+    steps:
+      - name: issue comment
+        run: echo ${{ github.event.issue.pull_request }}

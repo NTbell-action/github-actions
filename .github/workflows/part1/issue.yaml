@@ -3,7 +3,7 @@ on:
   issues:
     type: [opened]
 
-#issues경우 타입이 많음
+#issues경우 타입이 많음, 오직 default branch에서만 트리거됨!!
 # "opened, edited, deleted, transferred, pinned, unpinned, closed, assigned"
 # "unassigned, labeled, unlabeled, locked, unlocked, milestoned, demilestoned"
 
