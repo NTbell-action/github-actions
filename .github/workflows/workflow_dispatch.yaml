@@ -34,5 +34,5 @@ jobs:
           echo github action
       - name: echo inputs
         run: |
-          echo "name: ${{input.name}}"
-          echo "environment: ${{input.environment }}"
+          echo "name: ${{inputs.name}}"
+          echo "environment: ${{inputs.environment }}"
