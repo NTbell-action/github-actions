@@ -1,0 +1,12 @@
+name: context
+on: workflow_dispatch
+
+jobs:
+  context:
+    runs-on: unbuntu-latest
+    steps:
+      - name: github context
+        run: echo '${{ toJSON(github) }}'
+
+        #각각 context가 javascript객체라서 출력할려면 객체를 문자열로 반환해줘야함
+        #깁헙액션에서는 toJSON메서드 사용
