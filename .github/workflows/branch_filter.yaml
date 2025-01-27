@@ -1,0 +1,16 @@
+name: branch-filter
+# 이벤트가 특정 조건에 부합할 때 실행 -> 워크플로우 실행을 더 효과적으로 제어
+# 특정 branch, path, tag에 사용가능
+
+on:
+  push:
+    branches: ["dev"]
+    #해당 브랜치에서만 push 이벤트가 발생했을때 동작
+    # 즉, dev 브랜치에서만 작동이됨
+
+jobs:
+  branch-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo hi
