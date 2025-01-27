@@ -1,0 +1,17 @@
+name: path-filter
+on:
+  push:
+    paths:
+      - ".github/workflows/part1/*"
+      #part1에서 파일이 변경될때만 동작
+      - "!.github/workflows/part1/push.yaml"
+      # ! <- 제외 해라
+
+      #즉, 특정 디렉터리나 파일을 제외하고 트리거가능
+
+jobs:
+  path-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo hello
+        run: echo heelo
