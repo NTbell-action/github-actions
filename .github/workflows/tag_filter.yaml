@@ -1,0 +1,16 @@
+name: tag_filter
+#특정 태그에서 실행
+#push event에서만 사용!
+#태그 사용방법 git tah <tag-name>
+
+on:
+  push:
+    tags:
+      - "v[0-9]+.[0-9]+.[0-9]+" # v1.0.0 or v2.2.2 이렇게 됨  v1.0 or 1.0.0 <- 이렇게는 트리거안됨!
+
+jobs:
+  tag-filter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo hello
