@@ -19,6 +19,8 @@ jobs:
             count=$((count+1))
             sleep 1
           done
+        timeout-minutes: 1
+        # 첫번째 스텝이 1분안에 완료되지않으면 바로 종료!
       - name: echo
         run: echo hello
 # 두번째 step은 fail 되어야함

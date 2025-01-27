@@ -1,4 +1,6 @@
 name: path-filter
+# 푸시또는 pr이벤트에서 사용가능
+
 on:
   push:
     paths:
