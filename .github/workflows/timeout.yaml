@@ -1,0 +1,24 @@
+name: timeout
+# 특정 시간이상 실행되면 자동으로 중단
+# 특정 job or 특정 step 무한 루프, 불필요한 자원 소모 방지
+# default : 360분
+# job level, step level, timeout-minutes 정의 하여 사용
+
+on: push
+
+jobs:
+  timeout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2 # 2분 후 종료
+    steps:
+      - name: loop
+        run: |
+          count=0
+          while true; do
+            echo "seconds: $count"
+            count=$((count+1))
+            sleep 1
+          done
+      - name: echo
+        run: echo hello
+# 두번째 step은 fail 되어야함
